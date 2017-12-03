@@ -3,6 +3,11 @@
 
 """
 动态规划：核心是存储+更新
+这里更机智：不再考虑正负，就比较可能的最值。如果是负号的最大（小）值和如果是正号的最大（小）值
+prevMax = fmax;
+fmax = Math.max(Math.max(nums[i] * prevMax, nums[i]), nums[i] * fmin);
+fmin = Math.min(Math.min(nums[i] * prevMax, nums[i]), nums[i] * fmin);
+ans = Math.max(ans, fmax);
 """
 
 class Solution(object):
