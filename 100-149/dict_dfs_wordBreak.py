@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # _*_ coding: utf-8 _*_
 
+# TODO：没搞懂
 """
 记忆化搜索
 
@@ -77,3 +78,34 @@ if __name__ == '__main__':
     dict = ["cat", "cats", "and", "sand", "dog"]
     solution = Solution()
     print solution.wordBreak(s,dict)
+
+"""
+public class Solution {
+    public boolean wordBreak(String s, Set<String> dict) {
+    if (s == null || dict.contains(s)){
+        return true;
+    }
+    boolean[] valid = new boolean[s.length() + 1];
+    valid[s.length()] = true;
+    int maxLength = calMaxLength(dict);
+    for(int i = s.length()-1;i>=0;i--){
+        for(int j=i;j<s.length() && (i-j) <= maxLength;j++){
+            if (valid[j+1] && dict.contains(s.substring(i,j+1))){
+                valid[i] = true;
+                break;
+            }
+        }
+    }
+    return valid[0];
+}
+
+    public int calMaxLength(Set<String> dict){
+        int length = 0;
+        for(String word:dict){
+            length = Math.max(length,word.length());
+        }
+        return length;
+    }
+
+}
+"""

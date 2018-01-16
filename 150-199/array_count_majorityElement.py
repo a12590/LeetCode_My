@@ -8,6 +8,8 @@
 if count == 0:
     major = i;
 count += (major == i) ? 1:-1;
+for e in num:
+'aa' in 'aaa' True
 """
 
 class Solution:
@@ -23,3 +25,34 @@ class Solution:
             else:
                 count -= 1
         return candidate
+
+"""
+这个超过半数：
+public class Solution {
+    /**
+     * @param nums: a list of integers
+     * @return: find a  majority number
+     */
+    public int majorityNumber(ArrayList<Integer> nums) {
+    if(nums == null || nums.size() == 0){
+        return -1;
+    }
+    int majorNum = nums.get(0);
+    int count = 1;
+    for (int i = 1; i < nums.size(); i++){
+        if (majorNum == nums.get(i)){
+            count++;
+        }else{
+            count--;
+        }
+        # 核心部分，和上面一样的啊
+        if (count == 0){
+            majorNum = nums.get(i);
+            count = 1;
+        }
+    }
+    return majorNum;
+    }
+}
+
+"""

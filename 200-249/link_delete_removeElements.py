@@ -3,6 +3,8 @@
 
 """
 这里解释得很清楚：# 使用“哑节点”记录链表头部，dummy.next
+。..dummy ,新链表
+
 """
 
 # Definition for singly-linked list.

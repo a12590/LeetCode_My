@@ -3,6 +3,11 @@
 
 """
 dp[x][y] = dp[x-1][y] + dp[x][y-1]
+往下一步：
+dp[x+1][y] = dp[x][y] + dp[x+1][y-1],0 < x+1 < m
+dp[x][y+1] = dp[x][y+1] + dp[x][y], 0 < y+1 < n
+
+二维数组初始化：[[0] * n for x in range(m)]
 """
 import operator
 

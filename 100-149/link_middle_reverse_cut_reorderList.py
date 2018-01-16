@@ -7,6 +7,13 @@
 # 在就一句那会被破坏，故保存
 # right和cursor遍历右移
 # 区别于and。这里要来个判断
+
+分步骤时，其中的细节可能会疏忽，但是reverse和merge像下面搁一块也行。
+getMiddle(head)
+reverse(right = mid.next)
+# 基础功
+right.next = None
+merge(head,tail):
 """
 
 # Definition for singly-linked list.

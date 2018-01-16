@@ -37,6 +37,42 @@ class Solution(object):
             pointer.left = None
             pointer = top
 
+        # 全局dummy
+        # self.pointer = None
+        # def traverse(root):
+        #     if not root:return
+        #     # 后序遍历
+        #     traverse(root.right)
+        #     traverse(root.left)
+        #     root.left = self.pointer
+        #     root.left = None
+        #     self.pointer = root
+        # traverse(root)
+
+"""
+public class Solution {
+    /**
+     * @param root: a TreeNode, the root of the binary tree
+     * @return: nothing
+     */
+    public TreeNode parentNode = null;
+    public void flatten(TreeNode root) {
+        if (root == null){
+            return;
+        }
+        if (parentNode != null){
+            parentNode.left = null;
+            parentNode.right = root;
+        }
+        # 后移不是next,而是后赋值前
+        parentNode = root;
+        flatten(root.left);
+        flatten(root.right);
+    }
+}
+"""
+
+
 
 
 

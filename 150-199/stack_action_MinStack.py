@@ -2,7 +2,7 @@
 # _*_ coding: utf-8 _*_
 
 """
-
+最值问题，临界问题
 """
 
 class MinStack(object):
@@ -57,3 +57,49 @@ class MinStack(object):
 # obj.pop()
 # param_3 = obj.top()
 # param_4 = obj.getMin()
+
+"""
+class MinStack {
+
+    /** initialize your data structure here. */
+    private Stack<Integer> stack;
+    private Stack<Integer> minStack;
+    public MinStack() {
+        stack = new Stack<Integer>();
+        minStack = new Stack<Integer>();
+    }
+
+    public void push(int x) {
+        stack.push(x);
+        if (minStack.isEmpty()) {
+            minStack.push(x);
+        } else {
+            # 这里每次都会存值，所以pop时候minStack都会pop
+            minStack.push(minStack.peek() >= x? x:minStack.peek());
+        }
+    }
+
+    public void pop() {
+        minStack.pop();
+        stack.pop();
+    }
+
+    public int top() {
+        return stack.peek();
+    }
+
+    public int getMin() {
+        return minStack.peek();
+    }
+}
+
+/**
+ * Your MinStack object will be instantiated and called as such:
+ * MinStack obj = new MinStack();
+ * obj.push(x);
+ * obj.pop();
+ * int param_3 = obj.top();
+ * int param_4 = obj.getMin();
+ */
+
+"""

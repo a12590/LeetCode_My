@@ -6,6 +6,20 @@
 对二叉树节点进行标号，根节点标号为1；
 若某节点标号为c，则其左右孩子标号分别为2c, 2c + 1
 某层的宽度即为最右、最左节点标号之差+1
+
+常识：from collections import deque deque的形式：[(1,2)] append
+deque:二维数组
+level traverse(width（ans，（已知二维数组，计算当前值））)
+
+计数方式不同
+已知父亲： 左（i*2） / 右（i*2+1）。
+  1
+ 2 3
+4 5 6
+已知孩子： 父亲：(i + 1)/2,其中i表示在某层的位置
+  1
+ 1 2
+1 2 3
 """
 
 # Definition for a binary tree node.
